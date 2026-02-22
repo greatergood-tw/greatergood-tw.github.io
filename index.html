@@ -8,7 +8,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-NVG2T0DMBE');
     </script>
     <meta charset="UTF-8">
@@ -19,11 +18,16 @@
 
     <!-- Meta SEO -->
     <meta name="title" content="至善資訊有限公司">
-    <meta name="description" content="提供專業的技術顧問與軟體開發服務，協助您打造高效、高承載、可擴展的企業系統。">
+    <meta name="description" content="提供專業的雲端架構、AI 整合與軟體開發服務，協助您打造高效、高承載、可擴展的企業系統。">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Chinese (Traditional)">
     <meta name="author" content="至善資訊有限公司">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="至善資訊有限公司">
+    <meta property="og:description" content="雲端結合人工智慧，未來的創造者。提供雲端架構、AI 整合與軟體開發服務。">
+    <meta property="og:type" content="website">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
@@ -34,141 +38,276 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
-    <header class="fixed w-full">
-        <nav class="bg-black border-gray-200 py-2.5 dark:bg-gray-900">
-            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm">
+        <nav class="max-w-screen-xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
                 <a href="#" class="flex items-center">
-                    <img src="./static/img/color-logo.svg" class="h-6 mr-3 sm:h-9" alt="至善資訊有限公司" />
+                    <img src="./static/img/color-logo.svg" class="h-8" alt="至善資訊有限公司">
                 </a>
-                <div class="flex items-center lg:order-2">
-                    <button data-collapse-toggle="mobile-menu-2" type="button"
-                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="mobile-menu-2" aria-expanded="false">
-                        <span class="sr-only">開啟選單</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                        <li>
-                            <a href="#company"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">公司介紹</a>
-                        </li>
-                        <li>
-                            <a href="#contact"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">聯繫我們</a>
-                        </li>
-                    </ul>
-                </div>
+                <!-- Mobile menu button -->
+                <button id="nav-toggle" type="button"
+                    class="lg:hidden p-2 text-white rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
+                    aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <!-- Desktop nav -->
+                <ul class="hidden lg:flex items-center gap-8">
+                    <li><a href="#services"
+                            class="text-gray-300 hover:text-white transition-colors py-2">服務項目</a></li>
+                    <li><a href="#company"
+                            class="text-gray-300 hover:text-white transition-colors py-2">公司介紹</a></li>
+                    <li>
+                        <a href="#contact"
+                            class="bg-violet-600 hover:bg-violet-700 text-white font-medium px-5 py-2 rounded-lg transition-colors">
+                            聯繫我們
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-3 pb-2 border-t border-white/10">
+                <ul class="flex flex-col gap-1 mt-3">
+                    <li><a href="#services"
+                            class="block text-gray-300 hover:text-white hover:bg-white/10 px-3 py-3 rounded-lg transition-colors"
+                            onclick="closeMobileMenu()">服務項目</a></li>
+                    <li><a href="#company"
+                            class="block text-gray-300 hover:text-white hover:bg-white/10 px-3 py-3 rounded-lg transition-colors"
+                            onclick="closeMobileMenu()">公司介紹</a></li>
+                    <li><a href="#contact"
+                            class="block text-white bg-violet-600 hover:bg-violet-700 px-3 py-3 rounded-lg transition-colors mt-1 text-center font-medium"
+                            onclick="closeMobileMenu()">聯繫我們</a></li>
+                </ul>
             </div>
         </nav>
     </header>
-    <section class="bg-white dark:bg-gray-900 bg-fixed"
-        style="background-image: url('static/img/banner_1920.jpg')">
-        <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
-            <div class="mr-auto place-self-center lg:col-span-7">
-                <h1
-                    class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-white">
-                    雲端結合人工智慧，<br>未來的創造者</h1>
-                <p class="max-w-2xl mb-6 font-light text-gray-200 lg:mb-8 md:text-lg lg:text-xl">
-                    <strong>用雲端專業，提供您最佳化的系統解決方案，<br>我們是您業務成長的最佳夥伴。</strong>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center"
+        style="background-image: url('static/img/banner_1920.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/65"></div>
+        <div class="relative w-full max-w-screen-xl mx-auto px-4 py-36 lg:py-44">
+            <div class="max-w-2xl">
+                <p class="text-violet-400 font-semibold mb-3 text-sm tracking-widest uppercase">AI × Cloud × 2026</p>
+                <h1 class="text-4xl font-extrabold text-white leading-tight mb-5 md:text-5xl xl:text-6xl">
+                    雲端結合人工智慧，<br>未來的創造者
+                </h1>
+                <p class="text-gray-300 text-base mb-8 leading-relaxed md:text-lg">
+                    用雲端專業，提供您最佳化的系統解決方案。<br class="hidden sm:block">
+                    我們是您業務成長的最佳夥伴。
                 </p>
-            </div>
-        </div>
-    </section>
-    <section class="bg-gray-100">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
-            <!-- Row -->
-            <div id="company" class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16 scroll-p-11"
-                style="scroll-margin-top: 80px;">
-                <div class="text-gray-500 sm:text-lg">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">至善資訊有限公司</h2>
-                    <p class="mb-8 font-light lg:text-xl">
-                        2019年成立，提供專業的技術顧問與軟體開發服務。我們的使命是協助客戶打造高效、高承載、可擴展的企業系統。是您的軟體萬事屋，有問題我們來解決。</p>
-                    <!-- List -->
-                    <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7">
-                        <li class="flex space-x-3">
-                            <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-blue-800" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span
-                                class="text-base font-medium leading-tight text-gray-900">雲端專家：深厚的主流雲端技術(AWS、GCP、Azure)知識和實務經驗</span>
-                        </li>
-                        <li class="flex space-x-3">
-                            <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-blue-800" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span
-                                class="text-base font-medium leading-tight text-gray-900">一站式服務：提供從專業諮詢、教育訓練到系統診斷、效能優化、軟體開發整合的全方位服務。</span>
-                        </li>
-                        <li class="flex space-x-3">
-                            <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-blue-800" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span
-                                class="text-base font-medium leading-tight text-gray-900">客制化解決方案：注重客戶需求，提供最有效且最適合的解決方案。</span>
-                        </li>
-                        <li class="flex space-x-3">
-                            <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-blue-800" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </li>
-                    </ul>
-                    <p class="mb-8 font-light lg:text-xl">“We make you greater good.”，我們讓您的商品更好。</p>
+                <div class="flex flex-col gap-3 sm:flex-row">
+                    <a href="#contact"
+                        class="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 py-3.5 rounded-lg text-center transition-colors text-base">
+                        立即預約諮詢
+                    </a>
+                    <a href="#services"
+                        class="border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3.5 rounded-lg text-center transition-colors text-base">
+                        了解服務項目
+                    </a>
                 </div>
-                <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="static/img/feature-1.jpg"
-                    alt="dashboard feature image">
-            </div>
-        </div>
-    </section>
-    <section class="bg-gray-50">
-        <div id="contact" class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6" style="scroll-margin-top: 80px;">
-            <div class="max-w-screen-sm mx-auto text-center">
-                <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900">聯繫我們</h2>
-                <p class="mb-6 font-light text-gray-500 md:text-lg">
-                    有任何問題或需求，請不吝與我們聯繫。讓我們一起探索如何利用先進的雲端技術和人工智慧，為您打造一個更強大、更高效的未來。</p>
-                <a href="https://forms.gle/RkaAV8VmLei8bLyR6"
-                    class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">線上預約</a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white dark:bg-gray-800">
-        <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
-            <div class="text-center">
-                <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2024 Greatergood Info. Co.
-                    All Rights Reserved.</span>
+    <!-- Services Section -->
+    <section id="services" class="bg-white py-16 lg:py-24" style="scroll-margin-top: 64px;">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-10 lg:mb-14">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-3">服務項目</h2>
+                <p class="text-gray-500 text-lg max-w-xl mx-auto">從策略規劃到系統落地，提供完整技術服務</p>
+            </div>
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- 雲端架構顧問 -->
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">雲端架構顧問</h3>
+                    <p class="text-gray-500 leading-relaxed">AWS、GCP、Azure 全平台規劃，協助企業建構安全、高可用的雲端基礎設施。</p>
+                </div>
+                <!-- AI 解決方案 -->
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">AI 解決方案</h3>
+                    <p class="text-gray-500 leading-relaxed">整合大型語言模型與生成式 AI，打造符合企業場景的智慧化應用系統。</p>
+                </div>
+                <!-- 軟體開發 -->
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">軟體開發</h3>
+                    <p class="text-gray-500 leading-relaxed">後端系統、API 設計、微服務架構，提供穩定、可維護的軟體工程服務。</p>
+                </div>
+                <!-- 效能優化 -->
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">效能優化</h3>
+                    <p class="text-gray-500 leading-relaxed">系統診斷、資料庫調優、架構重構，全面提升系統效能與承載能力。</p>
+                </div>
+                <!-- 教育訓練 -->
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">教育訓練</h3>
+                    <p class="text-gray-500 leading-relaxed">雲端技術、DevOps、AI 應用等客製化企業內訓課程，提升團隊技術能力。</p>
+                </div>
+                <!-- 資安合規 -->
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">資安合規</h3>
+                    <p class="text-gray-500 leading-relaxed">協助企業符合資安規範，建立零信任架構，保障企業數據安全。</p>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="bg-gray-50 py-16 lg:py-24" style="scroll-margin-top: 64px;">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-4">至善資訊有限公司</h2>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6 md:text-lg">
+                        2019 年成立，提供專業的技術顧問與軟體開發服務。我們的使命是協助客戶打造高效、高承載、可擴展的企業系統。是您的軟體萬事屋，有問題我們來解決。
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-700"><strong class="text-gray-900">雲端專家</strong>：深厚的主流雲端技術
+                                (AWS、GCP、Azure) 知識和實務經驗</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-700"><strong
+                                    class="text-gray-900">一站式服務</strong>：從專業諮詢、教育訓練到系統診斷、效能優化、軟體開發的全方位服務</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-700"><strong
+                                    class="text-gray-900">客製化解決方案</strong>：注重客戶需求，提供最有效且最適合的解決方案</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-700"><strong class="text-gray-900">AI 整合先行</strong>：在 AI
+                                浪潮中協助企業找到最佳落地策略，快速實現商業價值</span>
+                        </li>
+                    </ul>
+                    <p class="text-gray-500 italic">"We make you greater good." — 我們讓您的商品更好。</p>
+                </div>
+                <div class="mt-10 lg:mt-0">
+                    <img class="w-full rounded-2xl shadow-md" src="static/img/feature-1.jpg" alt="公司特色圖">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-violet-600 py-16 lg:py-24" style="scroll-margin-top: 64px;">
+        <div class="max-w-screen-xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-extrabold text-white mb-4">聯繫我們</h2>
+            <p class="text-violet-100 text-base mb-8 max-w-2xl mx-auto leading-relaxed md:text-lg">
+                有任何問題或需求，請不吝與我們聯繫。讓我們一起探索如何利用先進的雲端技術和人工智慧，為您打造更強大、更高效的未來。
+            </p>
+            <a href="https://forms.gle/RkaAV8VmLei8bLyR6"
+                class="inline-block bg-white hover:bg-gray-100 text-violet-700 font-semibold px-8 py-4 rounded-lg transition-colors text-base">
+                線上預約諮詢
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-10">
+        <div class="max-w-screen-xl mx-auto px-4 text-center">
+            <img src="./static/img/color-logo.svg" class="h-7 mx-auto mb-4 opacity-60" alt="至善資訊有限公司">
+            <p class="text-sm text-gray-500">© 2026 至善資訊有限公司 Greatergood Info Co. All Rights Reserved.</p>
+        </div>
     </footer>
-    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        navToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            navToggle.setAttribute('aria-expanded', String(!isHidden));
+            iconOpen.classList.toggle('hidden', !isHidden);
+            iconClose.classList.toggle('hidden', isHidden);
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            navToggle.setAttribute('aria-expanded', 'false');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+        }
+    </script>
+
 </body>
 
 </html>
