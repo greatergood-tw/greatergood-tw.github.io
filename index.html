@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="scroll-smooth">
 
 <head>
+    <meta charset="UTF-8">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVG2T0DMBE"></script>
     <script>
@@ -10,32 +11,41 @@
         gtag('js', new Date());
         gtag('config', 'G-NVG2T0DMBE');
     </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/css/output.css" rel="stylesheet">
     <title>至善資訊有限公司</title>
 
     <!-- Meta SEO -->
-    <meta name="title" content="至善資訊有限公司">
     <meta name="description" content="提供專業的雲端架構、AI 整合與軟體開發服務，協助您打造高效、高承載、可擴展的企業系統。">
     <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Chinese (Traditional)">
     <meta name="author" content="至善資訊有限公司">
+    <link rel="canonical" href="https://www.greatergood.com.tw/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="至善資訊有限公司">
     <meta property="og:description" content="雲端結合人工智慧，未來的創造者。提供雲端架構、AI 整合與軟體開發服務。">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.greatergood.com.tw/">
+    <meta property="og:site_name" content="至善資訊有限公司">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:image" content="https://www.greatergood.com.tw/static/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" type="image/webp" imagesrcset="static/img/banner_960.webp 960w, static/img/banner_1920.webp 1920w" imagesizes="100vw">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon-16x16.png">
+    <link rel="icon" href="static/img/favicon.ico" sizes="any">
     <link rel="manifest" href="static/img/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#7c3aed">
+    <meta name="msapplication-config" content="static/img/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
 </head>
 
 <body class="bg-white text-gray-900 antialiased">
@@ -51,11 +61,11 @@
                 <button id="nav-toggle" type="button"
                     class="lg:hidden p-2 text-white rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
                     aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
-                    <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -92,8 +102,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center"
-        style="background-image: url('static/img/banner_1920.jpg'); background-size: cover; background-position: center;">
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <picture>
+            <source type="image/webp" srcset="static/img/banner_960.webp 960w, static/img/banner_1920.webp 1920w" sizes="100vw">
+            <img src="static/img/banner_1920.jpg" alt="" class="absolute inset-0 w-full h-full object-cover"
+                width="1920" height="1049" fetchpriority="high">
+        </picture>
         <div class="absolute inset-0 bg-black/65"></div>
         <div class="relative w-full max-w-screen-xl mx-auto px-4 py-36 lg:py-44">
             <div class="max-w-2xl">
@@ -128,9 +142,9 @@
             </div>
             <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 <!-- 雲端架構顧問 -->
-                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                <div class="p-6 border border-gray-100 rounded-2xl">
                     <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                         </svg>
@@ -139,9 +153,9 @@
                     <p class="text-gray-500 leading-relaxed">AWS、GCP、Azure 全平台規劃，協助企業建構安全、高可用的雲端基礎設施。</p>
                 </div>
                 <!-- AI 解決方案 -->
-                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                <div class="p-6 border border-gray-100 rounded-2xl">
                     <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
@@ -150,9 +164,9 @@
                     <p class="text-gray-500 leading-relaxed">整合大型語言模型與生成式 AI，打造符合企業場景的智慧化應用系統。</p>
                 </div>
                 <!-- 軟體開發 -->
-                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                <div class="p-6 border border-gray-100 rounded-2xl">
                     <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
@@ -161,9 +175,9 @@
                     <p class="text-gray-500 leading-relaxed">後端系統、API 設計、微服務架構，提供穩定、可維護的軟體工程服務。</p>
                 </div>
                 <!-- 效能優化 -->
-                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                <div class="p-6 border border-gray-100 rounded-2xl">
                     <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
@@ -172,9 +186,9 @@
                     <p class="text-gray-500 leading-relaxed">系統診斷、資料庫調優、架構重構，全面提升系統效能與承載能力。</p>
                 </div>
                 <!-- 教育訓練 -->
-                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                <div class="p-6 border border-gray-100 rounded-2xl">
                     <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
@@ -183,9 +197,9 @@
                     <p class="text-gray-500 leading-relaxed">雲端技術、DevOps、AI 應用等客製化企業內訓課程，提升團隊技術能力。</p>
                 </div>
                 <!-- 資安合規 -->
-                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-md transition-shadow">
+                <div class="p-6 border border-gray-100 rounded-2xl">
                     <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
@@ -210,7 +224,7 @@
                         <li class="flex items-start gap-3">
                             <div
                                 class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
-                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd" />
@@ -222,7 +236,7 @@
                         <li class="flex items-start gap-3">
                             <div
                                 class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
-                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd" />
@@ -234,7 +248,7 @@
                         <li class="flex items-start gap-3">
                             <div
                                 class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
-                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd" />
@@ -246,7 +260,7 @@
                         <li class="flex items-start gap-3">
                             <div
                                 class="flex-shrink-0 w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center mt-0.5">
-                                <svg class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" class="w-3.5 h-3.5 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd" />
@@ -259,7 +273,8 @@
                     <p class="text-gray-500 italic">"We make you greater good." — 我們讓您的商品更好。</p>
                 </div>
                 <div class="mt-10 lg:mt-0">
-                    <img class="w-full rounded-2xl shadow-md" src="static/img/feature-1.jpg" alt="公司特色圖">
+                    <img class="w-full h-auto rounded-2xl shadow-md" src="static/img/feature-1.jpg" alt="公司特色圖"
+                        width="640" height="427" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -283,7 +298,7 @@
     <footer class="bg-gray-900 py-10">
         <div class="max-w-screen-xl mx-auto px-4 text-center">
             <img src="./static/img/color-logo.svg" class="h-7 mx-auto mb-4 opacity-60" alt="至善資訊有限公司">
-            <p class="text-sm text-gray-500">© 2026 至善資訊有限公司 Greatergood Info Co. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400">© 2026 至善資訊有限公司 Greatergood Info Co. All Rights Reserved.</p>
         </div>
     </footer>
 
